@@ -16,9 +16,17 @@ def weatherdata():
 
     api_url='https://api.openweathermap.org/data/2.5/weather'
     params = {'q':city, 'units':units, 'appid': appid}
-    data = requests.get(api_url, params=params)
+    responce = requests.get(api_url, params=params)
+    data = responce.json()
+    feelslike = data['main']['feels_like']
+    humidity = data['main']['humidity']
+    pressure = data['main']['pressure']
+    temp = data['main']['temp']
+    city = data['name']
+    possibility = data['weather']['description']
+    wind = data["wind"]
 
-    return data.json()
+    return f'City :{city}/n/n Tempreture :{temp}/n Feels Like Tempreture :{feelslike}/n Humidity :{humidity}/n Pressure :{pressure}/n Wind :{wind}/n Posibility :{possibility}'
 
 if __name__== '__main__':
     app.run(host='0.0.0.0', port= 5002)
