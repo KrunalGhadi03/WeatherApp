@@ -23,10 +23,16 @@ def weatherdata():
     pressure = data['main']['pressure']
     temp = data['main']['temp']
     city = data['name']
-    possibility = data['weather']['description']
+    possibility = data['weather']
     wind = data["wind"]
 
-    return f'City :{city}/n/n Tempreture :{temp}/n Feels Like Tempreture :{feelslike}/n Humidity :{humidity}/n Pressure :{pressure}/n Wind :{wind}/n Posibility :{possibility}'
+    return f'''City :{city} 
+    Tempreture :{temp} 
+    Feels Like Tempreture :{feelslike} 
+    Humidity :{humidity} 
+    Pressure :{pressure} 
+    Wind :{wind} 
+    Posibility :{possibility}'''
 
 if __name__== '__main__':
     app.run(host='0.0.0.0', port= 5002)
