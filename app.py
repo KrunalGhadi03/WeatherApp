@@ -26,12 +26,12 @@ def weatherdata():
     possibility = data['weather']
     wind = data["wind"]
 
-    return f'''City :{city} 
-    Tempreture :{temp} 
-    Feels Like Tempreture :{feelslike} 
-    Humidity :{humidity} 
-    Pressure :{pressure} 
-    Wind :{wind} 
+    return f'''<br>City :{city}<br><br>
+    Tempreture :{temp}<br>
+    Feels Like Tempreture :{feelslike}<br> 
+    Humidity :{humidity}<br>
+    Pressure :{pressure}<br> 
+    Wind :{wind}<br> 
     Posibility :{possibility}'''
 
 if __name__== '__main__':
